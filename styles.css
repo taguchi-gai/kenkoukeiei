@@ -1,0 +1,721 @@
+/* 
+健康経営優良法人認定 ランディングページ スタイルシート
+*/
+
+/* ===== 基本設定 ===== */
+:root {
+    --primary-color: #1a5fb4;
+    --accent-color: #e63946;
+    --light-color: #ffffff;
+    --dark-color: #212529;
+    --gray-color: #f8f9fa;
+    --gray-dark-color: #6c757d;
+    --success-color: #28a745;
+    --border-color: #dee2e6;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --gradient-primary: linear-gradient(135deg, #1a5fb4 0%, #3584e4 100%);
+    --gradient-accent: linear-gradient(135deg, #e63946 0%, #ff6b6b 100%);
+    --font-family: 'Noto Sans JP', sans-serif;
+    --border-radius: 5px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: var(--light-color);
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* ===== タイポグラフィ ===== */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+ul, ol {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+/* ===== ボタン ===== */
+.btn {
+    display: inline-block;
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.btn-primary {
+    color: var(--light-color);
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #164688;
+    border-color: #164688;
+}
+
+.btn-accent {
+    color: var(--light-color);
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.btn-accent:hover {
+    background-color: #d32f3a;
+    border-color: #d32f3a;
+}
+
+.btn-large {
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+}
+
+/* ===== ヘッダー ===== */
+.header {
+    background-color: var(--light-color);
+    box-shadow: 0 2px 10px var(--shadow-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    max-width: 200px;
+}
+
+.logo-img {
+    width: 100%;
+    height: auto;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+}
+
+.phone {
+    margin-right: 1.5rem;
+    font-weight: 500;
+}
+
+/* ===== ヒーローセクション ===== */
+.hero {
+    background: var(--gradient-primary);
+    color: var(--light-color);
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    margin-bottom: 1.5rem;
+}
+
+.hero h2 {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.hero p {
+    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
+}
+
+.certification-badges {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.badge {
+    max-width: 150px;
+    height: auto;
+}
+
+/* ===== 問題提起セクション ===== */
+.problem {
+    padding: 5rem 0;
+    background-color: var(--gray-color);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+    color: var(--gray-dark-color);
+}
+
+.problem-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.problem-item {
+    background-color: var(--light-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.problem-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+/* ===== メリットセクション ===== */
+.benefits {
+    padding: 5rem 0;
+}
+
+.benefit-item {
+    display: flex;
+    margin-bottom: 3rem;
+    background-color: var(--light-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px var(--shadow-color);
+    overflow: hidden;
+}
+
+.benefit-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    font-size: 2.5rem;
+    padding: 1.5rem;
+}
+
+.benefit-content {
+    flex: 1;
+    padding: 2rem;
+}
+
+.benefit-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.benefit-content h4 {
+    color: var(--gray-dark-color);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.benefit-quote {
+    background-color: var(--gray-color);
+    padding: 1.5rem;
+    border-left: 4px solid var(--accent-color);
+    margin-top: 1.5rem;
+    font-style: italic;
+}
+
+.cta-container {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* ===== 成功事例セクション ===== */
+.case-studies {
+    padding: 5rem 0;
+    background-color: var(--gray-color);
+}
+
+.case-study-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.case-study-item {
+    background-color: var(--light-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px var(--shadow-color);
+    overflow: hidden;
+}
+
+.case-study-header {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 1.5rem;
+}
+
+.case-study-header h3 {
+    margin-bottom: 0.5rem;
+}
+
+.case-study-highlight {
+    font-weight: 500;
+}
+
+.case-study-content {
+    padding: 1.5rem;
+}
+
+/* ===== データセクション ===== */
+.data {
+    padding: 5rem 0;
+}
+
+.data-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.data-item {
+    background-color: var(--light-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.data-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.data-numbers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.data-number {
+    text-align: center;
+}
+
+.data-number .number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.data-number .label {
+    font-size: 0.9rem;
+    color: var(--gray-dark-color);
+}
+
+/* ===== フローセクション ===== */
+.flow {
+    padding: 5rem 0;
+    background-color: var(--gray-color);
+}
+
+.flow-steps {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.flow-step {
+    display: flex;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.flow-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 60px;
+    left: 25px;
+    width: 2px;
+    height: calc(100% - 30px);
+    background-color: var(--primary-color);
+}
+
+.flow-step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border-radius: 50%;
+    font-weight: 700;
+    margin-right: 1.5rem;
+    z-index: 1;
+}
+
+.flow-step-content {
+    flex: 1;
+}
+
+.flow-step-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.flow-note {
+    background-color: var(--light-color);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px var(--shadow-color);
+    margin-top: 3rem;
+}
+
+/* ===== プランセクション ===== */
+.plans {
+    padding: 5rem 0;
+}
+
+.plans-table-container {
+    overflow-x: auto;
+    margin-bottom: 2rem;
+}
+
+.plans-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--border-color);
+}
+
+.plans-table th, .plans-table td {
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.plans-table th {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+}
+
+.plans-table tbody tr:nth-child(even) {
+    background-color: var(--gray-color);
+}
+
+.plans-details {
+    background-color: var(--light-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px var(--shadow-color);
+    margin-bottom: 3rem;
+}
+
+.plans-details h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+/* ===== FAQセクション ===== */
+.faq {
+    padding: 5rem 0;
+    background-color: var(--gray-color);
+}
+
+.faq-item {
+    background-color: var(--light-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px var(--shadow-color);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 1.5rem;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    cursor: pointer;
+}
+
+.faq-question h3 {
+    margin-bottom: 0;
+}
+
+.faq-answer {
+    padding: 1.5rem;
+}
+
+/* ===== 最終CTAセクション ===== */
+.final-cta {
+    padding: 5rem 0;
+    background: var(--gradient-primary);
+    color: var(--light-color);
+}
+
+.final-cta .section-title, .final-cta .section-subtitle {
+    color: var(--light-color);
+}
+
+.final-cta .section-title::after {
+    background-color: var(--light-color);
+}
+
+.contact-form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.contact-form {
+    background-color: var(--light-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    color: var(--dark-color);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-family: var(--font-family);
+    font-size: 1rem;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.required {
+    color: var(--accent-color);
+}
+
+.form-submit {
+    text-align: center;
+}
+
+.contact-info-box {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-info-box h3 {
+    margin-bottom: 1.5rem;
+}
+
+.contact-info-box ul {
+    margin-bottom: 2rem;
+}
+
+/* ===== フッター ===== */
+.footer {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding: 5rem 0 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.footer h3 {
+    margin-bottom: 1.5rem;
+    color: var(--light-color);
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: var(--gray-color);
+}
+
+.footer-links a:hover {
+    color: var(--accent-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ===== レスポンシブデザイン ===== */
+@media (max-width: 992px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+    }
+    
+    .benefit-item {
+        flex-direction: column;
+    }
+    
+    .benefit-icon {
+        width: 100%;
+        padding: 1rem;
+    }
+    
+    .contact-form-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .contact-info {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .phone {
+        margin-right: 0;
+    }
+    
+    .hero {
+        padding: 3rem 0;
+    }
+    
+    .certification-badges {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .data-numbers {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .btn-large {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        margin-bottom: 2rem;
+    }
+    
+    .problem, .benefits, .case-studies, .data, .flow, .plans, .faq, .final-cta {
+        padding: 3rem 0;
+    }
+}
